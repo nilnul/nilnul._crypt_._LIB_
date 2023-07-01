@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35916093-0100-42D4-8C4A-B209B8D7A9AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nilnul.crypt</RootNamespace>
+    <AssemblyName>nilnul._crypt_._LIB_</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Symbols4Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Symbols4Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Symbol|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Symbol\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nuget|AnyCPU'">
+    <OutputPath>bin\Nuget\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <!--<LangVersion>default</LangVersion>-->
+    <LangVersion>latest</LangVersion>
+    <!--<LangVersion>preview</LangVersion>-->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev2nuget|AnyCPU'">
+    <OutputPath>bin\Dev2nuget\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <!--<LangVersion>7.3</LangVersion>-->
+    <!--<LangVersion>default</LangVersion>-->
+    <LangVersion>latest</LangVersion>
+    <!--<LangVersion>preview</LangVersion>-->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sym2nuget|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Sym2nuget\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <!--<LangVersion>default</LangVersion>-->
+    <LangVersion>latest</LangVersion>
+    <!--<LangVersion>preview</LangVersion>-->
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>t.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Certes, Version=3.0.3.0, Culture=neutral, PublicKeyToken=308b9c08e7effcb1, processorArchitecture=MSIL">
+      <HintPath>packages\Certes.3.0.3\lib\net461\Certes.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.collection_._discrete_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.collection_._discrete_._LIB_.1.1.230611.40617-sym\lib\net481\nilnul.collection_._discrete_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._integer_._LIB_,Version=1.1.230515.93530-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.num._integer_._LIB_.1.1.230515.93530-sym\lib\net481\nilnul.num._integer_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._quotient_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.num._quotient_._LIB_.1.1.230531.94846-sym\lib\net481\nilnul.num._quotient_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._real_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.num._real_._LIB_.2.1.230618.115840-sym\lib\net481\nilnul.num._real_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._bit_._LIB_,Version=1.1.230415.233652-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._bit_._LIB_.1.1.230415.233652-sym\lib\net481\nilnul._bit_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._character_._LIB_,Version=2.1.230408.121401-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._character_._LIB_.2.1.230408.121401-sym\lib\net481\nilnul._character_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._data_._LIB_,Version=1.1.230318.144409-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._data_._LIB_.1.1.230318.144409-sym\lib\net481\nilnul._data_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._fs_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._fs_._LIB_.2.1.230630.144714-sym\lib\net481\nilnul._fs_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._linq_._LIB_,Version=1.1.220906.140610, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._linq_._LIB_.1.1.220906.140610\lib\net481\nilnul._linq_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._num_._LIB_.1.1.230522.92555-sym\lib\net481\nilnul._num_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LINQ_,Version=1.1.230419.172425-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._num_._LINQ_.1.1.230419.172425-sym\lib\net481\nilnul._num_._LINQ_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._obj_._LIB_, Version=1.2.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._obj_._LIB_.1.2.230623.10954-sym\lib\net481\nilnul._obj_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._rel_._LIB_, Version=1.2.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._rel_._LIB_.1.2.230617.144331-sym\lib\net481\nilnul._rel_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._set_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._set_._LIB_.1.1.230615.145110-sym\lib\net481\nilnul._set_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._time_._LIB_,Version=1.1.230319.90029-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._time_._LIB_.1.1.230319.90029-sym\lib\net481\nilnul._time_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._txt_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._txt_._LIB_.1.1.230630.121127-sym\lib\net481\nilnul._txt_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.ProtectedData.6.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="_nilnul_._LIB_,Version=1.1.230415.182959-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\_nilnul_._LIB_.1.1.230415.182959-sym\lib\net481\_nilnul_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="_nilnul_._LINQ_,Version=1.1.230219.73454-sym, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\_nilnul_._LINQ_.1.1.230219.73454-sym\lib\net481\_nilnul_._LINQ_.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="be_\correct\Verify.cs" />
+    <Compile Include="bug\report_\InPrivate.cs" />
+    <Compile Include="cash_\btc\Block.cs" />
+    <Compile Include="cash_\btc\ProofOfWork.cs" />
+    <Compile Include="cash_\btc\proofOfWork_\HashCash.cs" />
+    <Compile Include="cash_\btc\unit_\Milli.cs" />
+    <Compile Include="cash_\btc\unit_\Min.cs" />
+    <Compile Include="cert\be_\safe_\Quantumly.cs" />
+    <Compile Include="cert_\ec\IKeyPair.cs" />
+    <Compile Include="cert_\ec_\IEdDsa.cs" />
+    <Compile Include="cert_\IEllipticCurve.cs" />
+    <Compile Include="cert_\IRivest9shamir9adleman.cs" />
+    <Compile Include="cert_\Simple public key infrastructure.cs" />
+    <Compile Include="ICypher.cs" />
+    <Compile Include="IStr.cs" />
+    <Compile Include="nilnul0\crypt_\asym\IDucat.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\StreamI.cs" />
+    <Compile Include="nilnul0\crypt_\_asym\_ducat\PrivateKey.cs" />
+    <Compile Include="nilnul0\crypt_\_asym\_ducat\privy\store_\Pkcs8end.cs" />
+    <Compile Include="nilnul0\data\secure\IKleptography.cs" />
+    <Compile Include="nilnul0\_crypt\hash_\_salted\ISalt.cs" />
+    <Compile Include="nilnul0\_crypt\ICipher.cs" />
+    <Compile Include="nilnul0\_crypt\IEntropy.cs" />
+    <Compile Include="nilnul0\_crypt\IInitializationVector.cs" />
+    <Compile Include="nilnul0\_crypt\IMsg.cs" />
+    <Compile Include="nilnul0\_crypt\IPlain.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\pass\IChange.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\_pass\ITip.cs" />
+    <Compile Include="nilnul0\_crypt\plain\IPadding.cs" />
+    <Compile Include="nilnul0\_crypt\plain\pad_\ILength8end.cs" />
+    <Compile Include="signature\IVerify.cs" />
+    <Compile Include="_decypher\IAuthenticationEncyption.cs" />
+    <Compile Include="_decypher\IMessageAuthenticationCode.cs" />
+    <Compile Include="_decypher\mac_\IHmac.cs" />
+    <Compile Include="nilnul0\crypt_\asym_\IEcdh.cs" />
+    <Compile Include="nilnul0\crypt_\asym_\IRsa.cs" />
+    <Compile Include="nilnul0\crypt_\IKem.cs" />
+    <Compile Include="nilnul0\crypt_\ISym.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\aes_\Cbc.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\aes_\gcm_\Key256bit.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\blockly\to_\Bytely.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\blockly_\IAes.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\bytely_\AdvancedEncryptionStandard.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\_blockly\Mode.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\IBlockly.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\IBytely.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\old_\IDes.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\old_\ITripleDes.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\_aes\IKey.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\_blockly\ISalt.cs" />
+    <Compile Include="nilnul0\comm_\_crypt\key\exchange_\dh_\IDiscreteLogarithm.cs" />
+    <Compile Include="nilnul0\comm_\_crypt\key\IExchange.cs" />
+    <Compile Include="nilnul0\_crypt\IHash.cs" />
+    <Compile Include="nilnul0\_crypt\IKey.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\IPass.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\pass\IImport.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\pass\import\Derive.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\pass\import\_derive\Salt.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\pass\_import\Hash.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf_\IHash.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf_\ISalt.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\_kdf\IPassword.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\IKeyDerivationFunction.cs" />
+    <Compile Include="nilnul0\_crypt\hash_\IKeyDerivationFunction.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\kdf_\IHmacKdf.cs" />
+    <Compile Include="nilnul0\_crypt\key\of_\kdf_\IPbkdf2.cs" />
+    <Compile Include="ICertificate.cs" />
+    <Compile Include="nilnul0\data\ICompression.cs" />
+    <Compile Include="nilnul0\comm\msg\crypt_\IPgp.cs" />
+    <Compile Include="nilnul0\comm_\tls\Cert.cs" />
+    <Compile Include="nilnul0\comm_\tls\cert\of_\Applicant.cs" />
+    <Compile Include="nilnul0\comm_\tls\Pki.cs" />
+    <Compile Include="nilnul0\comm_\Pub.cs" />
+    <Compile Include="nilnul0\comm_\_crypt\key\exchange_\dh\YaoMillionairProblem.cs" />
+    <Compile Include="nilnul0\comm_\_crypt\key\exchange_\dh_\ElipticCurve.cs" />
+    <Compile Include="nilnul0\comm_\_crypt\key\exchange_\DiffieHellman.cs" />
+    <Compile Include="nilnul0\comm_\pub\price\Negotiate.cs" />
+    <Compile Include="nilnul0\comm_\tls_\OpenSsl.cs" />
+    <Compile Include="nilnul0\crypt_\asym\cert\IChain.cs" />
+    <Compile Include="nilnul0\crypt_\asym\cert\Revocation.cs" />
+    <Compile Include="nilnul0\crypt_\asym\_cert\Auth.cs" />
+    <Compile Include="nilnul0\crypt_\asym\_cert\auth_\Literal.cs" />
+    <Compile Include="nilnul0\_crypt\Hash.cs" />
+    <Compile Include="nilnul0\_crypt\hash\Signature.cs" />
+    <Compile Include="auth_\IAcced.cs" />
+    <Compile Include="auth_\protect_\InUsr.cs" />
+    <Compile Include="nilnul0\crypt_\Homomorphic.cs" />
+    <Compile Include="nilnul0\ICript.cs" />
+    <Compile Include="cash_\Btc.cs" />
+    <Compile Include="cash_\btc\Target.cs" />
+    <Compile Include="cash_\btc\xact\be_\Confirmed.cs" />
+    <Compile Include="cash_\btc\xact\be_\Expired.cs" />
+    <Compile Include="cash_\btc\_xact\Address.cs" />
+    <Compile Include="nilnul0\crypt_\Asym.cs" />
+    <Compile Include="nilnul0\crypt_\asym\Cert.cs" />
+    <Compile Include="nilnul0\crypt_\Custom.cs" />
+    <Compile Include="auth_\Protect.cs" />
+    <Compile Include="auth_\protect_\Win.cs" />
+    <Compile Include="nilnul0\crypt_\StreamI.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\aes\_OnFileX.cs" />
+    <Compile Include="nilnul0\crypt_\sym_\_blockly\mode_\CfbI.cs" />
+    <Compile Include="nilnul0\crypt_\sym\Confidential.cs" />
+    <Compile Include="nilnul0\data\convert_\ITrapdoor.cs" />
+    <Compile Include="nilnul0\data\_security\Honeypot.cs" />
+    <Compile Include="nilnul0\data\_security\IBlock.cs" />
+    <Compile Include="nilnul0\os\usr\cert\Container.cs" />
+    <Compile Include="nilnul0\stat\dist_\finiite_\rnd_\Crypt.cs" />
+    <Compile Include="nilnul0\stat\dist_\stream_\Hash.cs" />
+    <Compile Include="Signature.cs" />
+    <Compile Include="signature_\IGpg.cs" />
+    <Compile Include="_cert\IAuthorityProvider.cs" />
+    <Compile Include="nilnul0\_crypt\hash\Tree.cs" />
+    <Compile Include="nilnul0\_crypt\hash_\sha_\TwoFivSix.cs" />
+    <Compile Include="nilnul0\_crypt\key_\OneTimePassword.cs" />
+    <Compile Include="nilnul0\_crypt\_SaltX.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cash_\block\" />
+    <Folder Include="cypher\" />
+    <Folder Include="cypher_\" />
+    <Folder Include="nilnul0\crypt_\asym\cert\subject\" />
+    <Folder Include="nilnul0\crypt_\sym_\blockly\to_\bytely_\" />
+    <Folder Include="nilnul0\crypt_\sym_\blockly_\aes\" />
+    <Folder Include="nilnul0\crypt_\sym_\bytely_\aes_\" />
+    <Folder Include="nilnul0\crypt_\sym_\bytely_\_aes\" />
+    <Folder Include="nilnul0\crypt_\vnd_\" />
+    <Folder Include="nilnul0\crypt_\_sym\" />
+    <Folder Include="nilnul0\crypt_\_sym_\" />
+    <Folder Include="nilnul0\data\func_\" />
+    <Folder Include="nilnul0\data_\blocks\chain\" />
+    <Folder Include="nilnul0\data_\blocks_\" />
+    <Folder Include="nilnul0\stat\dist_\finiite_\NewFolder1\" />
+    <Folder Include="nilnul0\_crypt\_key\" />
+    <Folder Include="_cypher\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="License.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Target Name="PostBuildMacros">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="Targets" />
+    </GetAssemblyIdentity>
+    <ItemGroup>
+      <VersionNumber Include="@(Targets->'%(Version)')" />
+      <MajorMinor Include="$([System.Text.RegularExpressions.Regex]::Replace(&quot;%(Targets.Version)&quot;, &quot;^([^\.]+)\.([^\.]+)(.*)$&quot;, &quot;$1.$2&quot;))" />
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <nilnulTime>$([System.DateTime]::UtcNow.ToString("yyMMddHHmmss"))</nilnulTime>
+    <nilnulPattern4date>^.{6}</nilnulPattern4date>
+    <nilnulDate>$([System.Text.RegularExpressions.Regex]::Match($(nilnulTime), $(nilnulPattern4date)))</nilnulDate>
+    <nilnulPattern4clock>.{6}$</nilnulPattern4clock>
+    <nilnulClock>$([System.Text.RegularExpressions.Regex]::Match($(nilnulTime), $(nilnulPattern4clock)))</nilnulClock>
+    <nilnulClockCollapsed>$(nilnulClock.TrimStart('0'))</nilnulClockCollapsed>
+    <_nilnulClockPrefixed>.$(nilnulClockCollapsed)</_nilnulClockPrefixed>
+    <nilnulClockPrefixed>$(_nilnulClockPrefixed.TrimEnd('.'))</nilnulClockPrefixed>
+    <nilnulPatchRevision>$(nilnulDate)$(nilnulClockPrefixed)</nilnulPatchRevision>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+			$(PostBuildEventDependsOn);
+			PostBuildMacros;
+		</PostBuildEventDependsOn>
+    <PostBuildEvent>echo ConfigurationName is $(ConfigurationName)
+if $(ConfigurationName) == Release (
+	"NuGet.exe" pack "$(ProjectPath)" -Prop Configuration=$(ConfigurationName) -Exclude **/*.tt -Version @(MajorMinor).$(nilnulPatchRevision)
+	"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision).nupkg -SkipDuplicate -Source local
+	"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision).nupkg -SkipDuplicate -Source my
+) ELSE (
+	if  $(ConfigurationName)==Symbol (
+		"NuGet.exe" pack "$(ProjectPath)" -Symbols -Prop Configuration=$(ConfigurationName) -Exclude **/*.tt -Version @(MajorMinor).$(nilnulPatchRevision)
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision).symbols.nupkg -SkipDuplicate -Source local
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision).symbols.nupkg -SkipDuplicate -Source my
+	)
+	if  $(ConfigurationName)==Nuget (
+		"NuGet.exe" pack "$(ProjectPath)"  -Prop Configuration=$(ConfigurationName) -Exclude **/*.tt -Version @(MajorMinor).$(nilnulPatchRevision)
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision).nupkg -SkipDuplicate -Source nuget.org
+	)
+	if  $(ConfigurationName)==Dev2nuget (
+		"NuGet.exe" pack "$(ProjectPath)"  -Prop Configuration=$(ConfigurationName) -Exclude **/*.tt -Version @(MajorMinor).$(nilnulPatchRevision)-dev
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision)-dev.nupkg -SkipDuplicate -Source nuget.org
+	)
+	if  $(ConfigurationName)==Sym2nuget (
+		"NuGet.exe" pack "$(ProjectPath)"  -Prop Configuration=$(ConfigurationName) -Exclude **/*.tt -Version @(MajorMinor).$(nilnulPatchRevision)-sym
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision)-sym.nupkg -SkipDuplicate -Source nuget.org
+		"NuGet.exe" push $(TargetName).@(MajorMinor).$(nilnulPatchRevision)-sym.nupkg -SkipDuplicate -Source my
+	)
+)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
